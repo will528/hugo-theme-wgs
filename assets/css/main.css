@@ -1,0 +1,171 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+:root {
+  --color-primary: rgb(211, 105, 49);
+  --color-text: rgb(237, 175, 141);
+  --color-background: rgb(9, 4, 2);
+  --font-mono: 'Fira Code', monospace;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: var(--font-mono);
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+	justify-content: space-between;
+}
+
+main {
+  padding-top: 1lh;
+  padding-bottom: 1lh;
+}
+
+main p {
+  padding-bottom: 1lh;
+}
+
+.pl-leading {
+  display: flex;
+  flex-direction: row;
+  gap: -1ch;
+  position: relative;
+}
+
+.pl-segment {
+  display: flex;
+  align-items: center; /* Center text vertically */
+  position: relative; /* To position the pseudo-element */
+  padding-right: 1.5ch;
+  padding-left: 1ch;
+  z-index: 1;
+}
+
+.pl-segment a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.pl-segment:nth-child(n+2) {
+  padding-left: 2ch;
+}
+
+.pl-segment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% + 1ch); /* Extend width to include the triangle */
+  clip-path: polygon(0 0, calc(100% - 1ch) 0, 100% 50%, calc(100% - 1ch) 100%, 0 100%);
+  z-index: -1; /* Place it behind the text */
+}
+
+.pl-color-primary {
+  color: var(--color-background);
+}
+
+.pl-color-primary::after {
+  background-color: var(--color-primary);
+}
+
+.pl-color-secondary {
+  color: var(--color-background);
+}
+
+.pl-color-secondary::after {
+  background-color: var(--color-text);
+}
+
+.pl-box {
+  border: 2px solid var(--color-primary);
+  padding: 1lh calc(1ch - 2px);
+  position: relative;
+  margin-bottom: 1lh;
+  margin-top: 0.5lh;
+}
+
+.pl-box-title {
+  position: absolute;
+  background-color: var(--color-background);
+  padding: 0 0.5lh;
+  top: -0.5lh;
+  left: 0.5ch;
+  font-weight: bold;
+}
+
+.fa-fw {
+  width: 3ch !important;
+}
+
+.social-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 3ch;
+}
+
+ul li::before {
+  content: '->';
+  position: absolute;
+  left: 0;
+}
+
+ul.no-list-style {
+  list-style: none;
+}
+
+ul.no-list-style li {
+  position: unset;
+  padding-left: unset;
+}
+
+ul.no-list-style li::before {
+  content: unset;
+  position: unset;
+  left: unset;
+}
+
+.page-title {
+  font-weight: bold;
+  width: 100%;
+  padding-left: 1ch;
+  margin-bottom: 1lh;
+  color: var(--color-background);
+  background-color: var(--color-text)
+}

@@ -1,0 +1,25 @@
+<header>
+    <div class="pl-leading">
+        <div class="pl-segment pl-color-primary">
+            <h1><a href="/">{{ site.Title }}</a></h1>
+        </div>
+        <nav class="pl-segment pl-color-secondary">
+            <a href="/">~</a>
+            {{- $path := "" -}}
+            {{- $sections := split (replaceRE "^https?://[^/]+" "" .Permalink) "/" -}}
+          
+            {{- range $index, $section := $sections -}}
+              {{- if ne $section "" -}}
+                <span class="breadcrumb-separator">/</span>
+                
+                {{/* Build up the cumulative path */}}
+                {{- $path = print $path "/" $section -}}
+                
+                <a href="{{ $path }}" class="breadcrumb-link">
+                  {{ $section | urlize }}
+                </a>
+              {{- end -}}
+            {{- end -}}
+            </nav>
+    </div>
+</header>

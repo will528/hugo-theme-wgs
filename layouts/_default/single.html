@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1 class="page-title">{{ .Title }}</h1>
+
+  {{ with .Date }}
+    {{ printf "%s %s, %s" (.Format "Jan") (.Format "2" | humanize) (.Format "2006") }}
+  {{ end }}
+
+  {{ .Content }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}

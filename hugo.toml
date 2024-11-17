@@ -1,0 +1,46 @@
+baseURL = 'https://wgs.dev/'
+languageCode = 'en-US'
+title = 'wgs.dev'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
+
+
+[params]
+  [[params.links]]
+  label = "Discord"
+  icon = "fa-brands fa-discord"
+  href = "https://discordapp.com/users/351519122414239745"
+
+  [[params.links]]
+  label = "Spotify"
+  icon = "fa-brands fa-spotify"
+  href = "https://open.spotify.com/user/31m6glvaig4a6kktcrgyrek5zotu"
+
+
+  [[params.links]]
+  label = "GitHub"
+  icon = "fa-brands fa-github"
+  href = "https://github.com/will528"
+
+  [[params.links]]
+  label = "Steam"
+  icon = "fa-brands fa-steam"
+  href = "https://steamcommunity.com/id/WillSmith528/"

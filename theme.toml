@@ -1,0 +1,19 @@
+name = 'wgs'
+license = 'MIT'
+licenselink = 'https://github.com/will528/hugo-theme-wgs/blob/main/LICENSE'
+description = 'A custom Hugo theme I use for my personal website.'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/will528/hugo-theme-wgs'
+
+# If you have a running demo of the theme
+demosite = 'https://wgs.dev'
+
+# Taxonomy terms
+tags = ['blog', 'personal', 'cv', 'plain', 'dark']
+features = ['responsive', 'simple', 'dark']
+
+# If the theme has a single author
+[author]
+  name = 'William Smith'
+  homepage = 'https://wgs.dev'

@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{ .Content }}
+  <section class="pl-box" aria-labelledby="links-title">
+    <h2 id="links-title" class="pl-box-title">Socials</h2>
+    <ul class="social-ul no-list-style">
+      {{ range .Site.Params.links }}
+        <li>
+          <a href="{{ .href }}" target="_blank"><i class="fa-fw {{ .icon }}" style="color: var(--color-text)" aria-hidden="true"></i>{{ .label }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  <section class="pl-box" aria-labelledby="posts-title">
+    <h2 id="posts-title" class="pl-box-title">Recent Posts</h2>
+    <ul class="no-list-style">
+    {{ range first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "posts") }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a><br />
+        {{ if gt (len .Content) 200 }}          
+          <span>{{slicestr .Content 3 200 | markdownify }}...</span>
+        {{ else }}
+          <span>{{slicestr .Content 3 (len .Content) | markdownify}}</span>
+        {{ end }}
+      </li>
+    {{ end }}
+    </ul>
+  </section>
+{{ end }}
